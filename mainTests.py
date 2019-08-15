@@ -39,4 +39,22 @@ originalMessage = decryptedMessage.decode()
 print(originalMessage)
 
 # file encryption + decryption
+# 1 open target file
+targetFile = open('EncryptedTextSource', "rb")
+text = targetFile.read()
 
+encryptText = Fernet(key)
+encryptTextMessage = encryptText.encrypt(text)
+# write encrypted text to file , this is what would be transmitted
+encryptedFile = open("EncryptedTextSource.encrypted", "wb")
+encryptedFile.write(encryptTextMessage)
+
+# decrypt target file
+targetFile = open("EncryptedTextSource.encrypted", "rb")
+data = targetFile.read()
+
+encrypt_3 = Fernet(key) #TODO find whats rasing InvalidToken
+encryptedTextMessage = encryptText.decrypt(data)
+
+file = open("EncryptedTextSource.decrypted", "wb")
+file.write(encryptedTextMessage)
