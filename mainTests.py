@@ -51,10 +51,10 @@ encryptedFile.write(encryptTextMessage)
 
 # decrypt target file
 targetFile = open("EncryptedTextSource.encrypted", "rb")
-data = targetFile.read()
+encryptiontest3 = targetFile.read()
 
 encrypt_3 = Fernet(key) #TODO find whats rasing InvalidToken
-encryptedTextMessage = encryptText.decrypt(data)
+encryptedTextMessage = encryptText.decrypt(encryptiontest3)
 
 file = open("EncryptedTextSource.decrypted", "wb")
 file.write(encryptedTextMessage)
