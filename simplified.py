@@ -1,6 +1,6 @@
-import cryptography.fernet as set
+import cryptography.fernet as process
 
-# TODO
+#TODO
 # 1.generate base key ,
 # 2.get input message ,
 # 3.process message to encrypt ,
@@ -10,10 +10,15 @@ import cryptography.fernet as set
 # act -on message
 
 # 1
-seed = set.Fernet.generate_key()
-key = set.Fernet(seed)
+seed = process.Fernet.generate_key()
+key = process.Fernet(seed)
 
 # 2
 targetFile = open('simplified_text', "r")
 text = targetFile.read()
-print(text)
+print("Message to Encrypt :\n" + text)
+b_text = str.encode(text)
+
+# 3
+encrypted_message = key.encrypt(b_text)
+print(encrypted_message)
