@@ -1,6 +1,6 @@
 import cryptography.fernet as process
 
-#TODO
+# TODO
 # 1.generate base key ,
 # 2.get input message ,
 # 3.process message to encrypt ,
@@ -22,3 +22,12 @@ b_text = str.encode(text)
 # 3
 encrypted_message = key.encrypt(b_text)
 print(encrypted_message)
+
+#
+#   Transmit message
+#
+
+# 4
+decrypted_message = key.decrypt(encrypted_message)  # message in byte form
+print(decrypted_message)
+
