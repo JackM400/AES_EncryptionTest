@@ -1,3 +1,5 @@
+# jack.millar400@gmail.com
+# JACKM400
 from cryptography.fernet import Fernet
 
 # string encryption + decryption
@@ -53,7 +55,7 @@ encryptedFile.write(encryptTextMessage)
 targetFile = open("EncryptedTextSource.encrypted", "rb")
 encryptiontest3 = targetFile.read()
 
-encrypt_3 = Fernet(key) #TODO find whats rasing InvalidToken
+encrypt_3 = Fernet(key)  # TODO find whats rasing InvalidToken
 encryptedTextMessage = encryptText.decrypt(encryptiontest3)
 
 file = open("EncryptedTextSource.decrypted", "wb")
